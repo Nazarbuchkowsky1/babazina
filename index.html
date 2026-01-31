@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outpost - Taking Brands Further</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+</head>
+
+<body>
+    <!-- Intro Loading Screen -->
+    <div class="intro-loading-screen" id="introLoadingScreen">
+        <div class="intro-panel intro-panel-top" id="panelTop"></div>
+        <div class="intro-panel intro-panel-bottom" id="panelBottom"></div>
+
+        <div class="loader-content-cosmos">
+            <div class="preloader_lottie">
+                <div class="cosmos-rings-wrapper">
+                    <svg class="cosmos-svg" viewBox="0 0 200 200">
+                        <circle class="cosmos-ring cosmos-ring-1" cx="100" cy="100" r="40"></circle>
+                        <circle class="cosmos-ring cosmos-ring-2" cx="100" cy="100" r="60"></circle>
+                        <circle class="cosmos-ring cosmos-ring-3" cx="100" cy="100" r="80"></circle>
+                        <g class="cosmos-points"></g>
+                    </svg>
+                </div>
+                <div class="preloader-numbers_wr">
+                    <span id="loaderPercent" class="loaderPercent">000</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="menu-toggle" id="menuToggle">
+        <span class="menu-text">Menu</span>
+        <span class="close-text">Close</span>
+    </button>
+
+    <!-- Navigation Menu -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-menu" id="navMenu">
+            <div class="nav-menu-inner">
+                <a href="#home" class="nav-menu-item">
+                    <span class="nav-menu-label">HOME</span>
+                    <span class="nav-menu-label">HOME</span>
+                </a>
+                <a href="#work" class="nav-menu-item">
+                    <span class="nav-menu-label">WORK</span>
+                    <span class="nav-menu-label">WORK</span>
+                </a>
+                <a href="#about" class="nav-menu-item">
+                    <span class="nav-menu-label">ABOUT</span>
+                    <span class="nav-menu-label">ABOUT</span>
+                </a>
+                <a href="#contact" class="nav-menu-item">
+                    <span class="nav-menu-label">CONTACT</span>
+                    <span class="nav-menu-label">CONTACT</span>
+                </a>
+                <a href="#lab" class="nav-menu-item">
+                    <span class="nav-menu-label">LAB</span>
+                    <span class="nav-menu-label">LAB</span>
+                </a>
+            </div>
+            <div class="nav-menu-footer">
+                <div class="nav-contact">
+                    <a href="mailto:info@outpost.design" class="nav-contact-link">info@outpost.design</a>
+                    <a href="tel:+441260285815" class="nav-contact-link">01260 285 815</a>
+                </div>
+                <div class="nav-social">
+                    <a href="#" class="nav-social-link">X</a>
+                    <a href="#" class="nav-social-link">Ig</a>
+                    <a href="#" class="nav-social-link">ln</a>
+                    <a href="#" class="nav-social-link">Be</a>
+                    <a href="#" class="nav-social-link">Dr</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Particle Intro Section (New First Screen) -->
+    <section class="particle-intro" id="particleIntro">
+        <div id="particleCanvasContainer"></div>
+
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span>АКАДЕМІЯ</span>
+                <span>ДУХОВНОСТІ</span>
+            </h1>
+
+            <div class="hero-description-container">
+                <p class="hero-description">
+                    We design and build custom Internal AI <br> tools that reduce manual work and accelerate execution.
+                </p>
+            </div>
+        </div>
+
+        <div class="intro-overlay">
+            <div class="scroll-indicator">
+                <div class="mouse-icon"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statement Section -->
+
+    <!-- Statement Section -->
+    <section class="statement" id="statement">
+        <div class="statement-container">
+            <h2 class="statement-title" data-statement-text>Духовність, яка змінює матеріальне.</h2>
+        </div>
+    </section>
+
+    <!-- Courses Section (Sticky Stacking) -->
+    <section class="courses" id="courses">
+        <div class="stack">
+            <!-- Course 1: Black background -->
+            <div class="course-sticky-card panel-1" data-course="1">
+                <div class="course-card-content">
+                    <!-- Content cleared -->
+                </div>
+            </div>
+
+            <!-- Course 2: White background -->
+            <div class="course-sticky-card panel-2" data-course="2">
+                <div class="course-card-content">
+                    <!-- Content cleared -->
+                </div>
+            </div>
+
+            <!-- Course 3: Black background -->
+            <div class="course-sticky-card panel-3" data-course="3">
+                <div class="course-card-content">
+                    <!-- Content cleared -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test section after panels to prove normal scroll continues -->
+    <section class="test-section-after-panels">
+        <div class="test-section-content">
+            <h2>Normal Scroll Continues Here</h2>
+            <p>This section proves that after panel-3, normal scrolling works correctly.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+
+        <div class="testimonials-bg-crystal">
+            <img src="ChatGPT Image 30 січ. 2026 р., 10_16_39.png" alt="Background Crystal">
+        </div>
+        <div class="testimonials-container">
+            <div class="testimonials-header-top">
+                <h2 class="testimonials-main-title">Відгуки</h2>
+            </div>
+            <div class="testimonials-slider-wrapper">
+                <div class="testimonials-track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-card-inner">
+                            <p class="testimonial-quote">"The team at Estrela have been amazing and critical to our
+                                UI/UX journey, they challenge our thoughts for the better and have allowed us to
+                                become South Africa's fastest-growing Buy Now Pay Later platform. I cannot recommend
+                                them enough."</p>
+                            <p class="testimonial-author">Craig Newborn</p>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-card-inner">
+                            <p class="testimonial-quote">"The level of detail and artistic vision surpassed all
+                                expectations. A truly premium design partner for tech-focused industries.
+                                They understood our brand identity immediately and translated it into a cohesive
+                                digital experience that feels alive."</p>
+                            <p class="testimonial-author">Alex Rivers</p>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-card-inner">
+                            <p class="testimonial-quote">"Fast, professional, and visually stunning digital
+                                craftsmanship. They led the project with confidence, and I recommend them
+                                without hesitation. Their work communicates what words can't, driving real value for
+                                our global users."</p>
+                            <p class="testimonial-author">Sarah Chen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="faq-container">
+            <div class="faq-title-wrapper">
+                <h2 class="faq-title">FAQ</h2>
+            </div>
+            <div class="faq-content-wrapper">
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-line"></div>
+                        <div class="faq-item-content">
+                            <div class="faq-question-wrapper">
+                                <p class="faq-question">What kind of clients do you work with?</p>
+                            </div>
+                            <div class="faq-icon">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 1V17M1 9H17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-line"></div>
+                        <div class="faq-item-content">
+                            <div class="faq-question-wrapper">
+                                <p class="faq-question">What services do you offer?</p>
+                            </div>
+                            <div class="faq-icon">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 1V17M1 9H17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-line"></div>
+                        <div class="faq-item-content">
+                            <div class="faq-question-wrapper">
+                                <p class="faq-question">How do you price your projects?</p>
+                            </div>
+                            <div class="faq-icon">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 1V17M1 9H17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-line"></div>
+                        <div class="faq-item-content">
+                            <div class="faq-question-wrapper">
+                                <p class="faq-question">What is your typical project timeline?</p>
+                            </div>
+                            <div class="faq-icon">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 1V17M1 9H17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-line"></div>
+                        <div class="faq-item-content">
+                            <div class="faq-question-wrapper">
+                                <p class="faq-question">Do you accept one-off design tasks or only full projects?</p>
+                            </div>
+                            <div class="faq-icon">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 1V17M1 9H17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-line"></div>
+                        <div class="faq-item-content">
+                            <div class="faq-question-wrapper">
+                                <p class="faq-question">How many concepts or revisions are included?</p>
+                            </div>
+                            <div class="faq-icon">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 1V17M1 9H17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-line"></div>
+                        <div class="faq-item-content">
+                            <div class="faq-question-wrapper">
+                                <p class="faq-question">Can you help with brand identity from scratch?</p>
+                            </div>
+                            <div class="faq-icon">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 1V17M1 9H17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-line"></div>
+                        <div class="faq-item-content">
+                            <div class="faq-question-wrapper">
+                                <p class="faq-question">What format do you deliver final files in?</p>
+                            </div>
+                            <div class="faq-icon">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 1V17M1 9H17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-line"></div>
+                        <div class="faq-item-content">
+                            <div class="faq-question-wrapper">
+                                <p class="faq-question">Do you offer ongoing maintenance packages?</p>
+                            </div>
+                            <div class="faq-icon">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 1V17M1 9H17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-line"></div>
+                        <div class="faq-item-content">
+                            <div class="faq-question-wrapper">
+                                <p class="faq-question">How do we get started with Estrela Studio?</p>
+                            </div>
+                            <div class="faq-icon">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 1V17M1 9H17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section class="footer-section" id="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <p class="footer-link">INSTAGRAM</p>
+                <p class="footer-link">TELEGRAM</p>
+            </div>
+            <div class="footer-right">
+                <p class="footer-copyright">Copyright 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

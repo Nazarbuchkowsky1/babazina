@@ -1,0 +1,22 @@
+{
+  "name": "outpost-design-clone",
+  "version": "1.0.0",
+  "description": "Complete clone of outpost.design website with all animations, 3D elements, and interactions",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx live-server --port=3000 --open=/index.html"
+  },
+  "keywords": [
+    "website",
+    "3d",
+    "animations",
+    "three.js",
+    "gsap"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
+
